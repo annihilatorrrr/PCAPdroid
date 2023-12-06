@@ -57,9 +57,7 @@ parser.add_argument('-v', '--verbose', help='Enable verbose log to stderr', acti
 parser.add_argument('-w', '--write', help='Write the PCAP to the specified file', metavar='FILE', default="-")
 args = parser.parse_args()
 
-outf = None
-if args.write != '-':
-  outf = open(args.write, "wb")
+outf = open(args.write, "wb") if args.write != '-' else None
 
 def write(data):
   if outf:
@@ -79,8 +77,8 @@ def main_loop():
     data, addr = sock.recvfrom(BUFSIZE)
     is_pcap_header = (len(data) == PCAP_HEADER_SIZE) and (data.startswith(PCAP_HDR_BYTES_PREFIX))
 
-    if(args.verbose):
-      sys.stderr.write("Got a {}B packet\n".format(len(data)))
+    if args.verbose:
+      sys.stderr.write(f"Got a {len(data)}B packet\n")
 
     if(not pcap_header_sent) and (not is_pcap_header):
       # This tool was started after PCAPdroid, so we must build a PCAP header
