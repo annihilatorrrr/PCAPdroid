@@ -380,4 +380,15 @@
     <string name="username">Nom d\'utilisateur</string>
     <string name="password">Mot de passe</string>
     <string name="qr_code_expired">Le QR code a expiré. Générez un nouveau code QR et réessayez</string>
+    <string name="tcp_exporter">Exporteur TCP</string>
+    <string name="tcp_udp_exporter">Exporter TCP/UDP</string>
+    <string name="tcp_exporter_info">Envoyer le PCAP à un serveur TCP distant (pcap-over-ip)</string>
+    <string name="dump_extensions_how_to">Comment afficher les extensions des dumps PCAPdroid dans Wireshark</string>
+    <string name="no_permissions_set_info">Aucune permission accordée. Invoque PCAPdroid via StartActivityForResult pour montrer la demande de permission</string>
+    <string name="generate_api_key">Générer une clé d\'API</string>
+    <string name="show_api_key">Montrer la clé d\'API</string>
+    <string name="api_key">Clé d\'API</string>
+    <string name="api_key_discard_confirm">Voulez-vous vraiment révoquer la clé d\'API actuelle et en générer une nouvelle ?</string>
+    <string name="malicious_connections_notice">Les listes noires peuvent contenir des faux positifs. Assurez-vous de vérifier la réputation de l\'adresse IP/du domaine en ligne. Vous pouvez exclure des faux positifs par une liste blanche de logiciels malveillants</string>
+    <string name="export_ca_certificate">Exporter le certificat du CA de PCAPdroid, puis ouvrez les paramètres Android \"Chiffrement et identifiants\" et choisissez \"Installer un certificat\" en tant que \"Certificat CA\"</string>
 </resources>
