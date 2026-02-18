@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="start_button">प्रारंभ</string>
+    <string name="stop_button">बंद करे</string>
+    <string name="title_activity_settings">सेटिंग्स</string>
+    <string name="collector_info">UDP कलेक्टर: %1$s: %2$d</string>
+    <string name="tcp_collector_info">टीसीपी कलेक्टर: %1$s: %2$d</string>
+    <string name="http_server_status">HTTP सर्वर: http://%1$s:%2$d</string>
+    <string name="rcvd_and_sent">%1$s प्राप्त - %2$s भेजा</string>
+    <string name="query">क्वेरी</string>
+    <string name="host">होस्ट</string>
+    <string name="ready">रेडी</string>
+</resources>
