@@ -21,6 +21,7 @@ package com.emanuelef.remote_capture.fragments;
 
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -695,11 +696,13 @@ public class HttpLogFragment extends Fragment implements HttpLog.Listener, MenuP
         final Uri txtFname = mTxtFname;
         mTxtFname = null;
 
+        final Context context = requireContext().getApplicationContext();
+
         executor.execute(() -> {
             boolean success = false;
 
             try {
-                OutputStream stream = requireActivity().getContentResolver().openOutputStream(txtFname, "rwt");
+                OutputStream stream = context.getContentResolver().openOutputStream(txtFname, "rwt");
 
                 if(stream != null) {
                     for(HttpLog.HttpRequest req : requests) {
@@ -746,7 +749,7 @@ public class HttpLogFragment extends Fragment implements HttpLog.Listener, MenuP
                 return;
 
             final boolean result = success;
-            final Utils.UriStat stat = result ? Utils.getUriStat(requireContext(), txtFname) : null;
+            final Utils.UriStat stat = result ? Utils.getUriStat(context, txtFname) : null;
 
             handler.post(() -> {
                 if(mAlertDialog != null)
@@ -754,12 +757,12 @@ public class HttpLogFragment extends Fragment implements HttpLog.Listener, MenuP
 
                 if(result) {
                     if(stat != null) {
-                        String msg = String.format(getString(R.string.file_saved_with_name), stat.name);
-                        Toast.makeText(requireContext(), msg, Toast.LENGTH_SHORT).show();
+                        String msg = String.format(context.getString(R.string.file_saved_with_name), stat.name);
+                        Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
                     } else
-                        Utils.showToast(requireContext(), R.string.save_ok);
+                        Utils.showToast(context, R.string.save_ok);
                 } else
-                    Utils.showToast(requireContext(), R.string.cannot_write_file);
+                    Utils.showToast(context, R.string.cannot_write_file);
 
                 if(mActionMode != null)
                     mActionMode.finish();
@@ -848,14 +851,16 @@ public class HttpLogFragment extends Fragment implements HttpLog.Listener, MenuP
         final Uri harFname = mHarFname;
         mHarFname = null;
 
+        final Context context = requireContext().getApplicationContext();
+
         executor.execute(() -> {
             boolean success = false;
 
             try {
-                OutputStream stream = requireActivity().getContentResolver().openOutputStream(harFname, "rwt");
+                OutputStream stream = context.getContentResolver().openOutputStream(harFname, "rwt");
 
                 if(stream != null) {
-                    HarWriter writer = new HarWriter(requireContext(), requests);
+                    HarWriter writer = new HarWriter(context, requests);
                     writer.write(stream);
                     stream.close();
                     success = true;
@@ -869,7 +874,7 @@ public class HttpLogFragment extends Fragment implements HttpLog.Listener, MenuP
                 return;
 
             final boolean result = success;
-            final Utils.UriStat stat = result ? Utils.getUriStat(requireContext(), harFname) : null;
+            final Utils.UriStat stat = result ? Utils.getUriStat(context, harFname) : null;
 
             handler.post(() -> {
                 if(mAlertDialog != null)
@@ -877,12 +882,12 @@ public class HttpLogFragment extends Fragment implements HttpLog.Listener, MenuP
 
                 if(result) {
                     if(stat != null) {
-                        String msg = String.format(getString(R.string.file_saved_with_name), stat.name);
-                        Toast.makeText(requireContext(), msg, Toast.LENGTH_SHORT).show();
+                        String msg = String.format(context.getString(R.string.file_saved_with_name), stat.name);
+                        Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
                     } else
-                        Utils.showToast(requireContext(), R.string.save_ok);
+                        Utils.showToast(context, R.string.save_ok);
                 } else
-                    Utils.showToast(requireContext(), R.string.cannot_write_file);
+                    Utils.showToast(context, R.string.cannot_write_file);
 
                 if(mActionMode != null)
                     mActionMode.finish();
