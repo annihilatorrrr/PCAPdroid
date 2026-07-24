@@ -567,22 +567,22 @@
     <string name="port_mapping_disabled_reminder">Увімкніть зіставлення портів, щоб використовувати це правило</string>
     <string name="tls_decryption_unsupported_target">Для розшифрування TLS потрібна версія Android 7 або новіша та пристрій x86_64/aarch64</string>
     <string name="save_as_csv">Зберегти як CSV</string>
-    <string name="last_capture">Останній знімок</string>
+    <string name="last_capture">Останнє захоплення</string>
     <string name="view_all">Переглянути всі</string>
     <string name="app_and_n_more">%1$s та ще %2$d</string>
     <string name="capture_list_info">%1$s · %2$s · %3$s</string>
     <string name="capture_list">Список захоплень</string>
-    <string name="captures_count">Знімки (%1$d)</string>
+    <string name="captures_count">Захоплення (%1$d)</string>
     <string name="storage_used">Використано пам\'ять</string>
     <string name="storage_used_value">%1$s / %2$s</string>
     <string name="no_captures">Немає захоплень</string>
     <string name="rename">Перейменувати</string>
-    <string name="captures_delete_confirm">Видалити вибрані знімки?</string>
+    <string name="captures_delete_confirm">Видалити вибрані захоплення?</string>
     <string name="less_than_one_sec">&lt; 1 s</string>
     <string name="n_seconds">%1$d s</string>
     <string name="n_minutes">%1$d m</string>
     <string name="n_hours_minutes">%1$d h, %2$d m</string>
     <string name="connections_log_size">Максимальна кількість зареєстрованих підключень</string>
     <string name="connections_log_size_entry">%1$s (використано ~%2$d МБ оперативної пам\'яті)</string>
-    <string name="capture_list_files_changed">Змінені знімки на диску, список оновлено</string>
+    <string name="capture_list_files_changed">Змінені захоплення на диску, список оновлено</string>
 </resources>

@@ -575,5 +575,5 @@
     <string name="port_map_exemptions_help">Выберите приложения для исключения из сопоставления портов. Во избежание зацикливания трафика, вам необходимо исключить приложения, которым требуется обращение к своим исходным серверам для начальной инициализации (например DNS-over-HTTPS резолверы)</string>
     <string name="capture_list_files_changed">Дампы на диске изменились, список обновлен</string>
     <string name="connections_log_size">Макс. логируемых соединений</string>
-    <string name="storage_used">Использованое хранилище</string>
+    <string name="storage_used">Использованное хранилище</string>
 </resources>
