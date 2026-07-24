@@ -74,7 +74,6 @@ public class CaptureSettings implements Serializable {
         socks5_password = Prefs.isSocks5AuthEnabled(prefs) ? Prefs.getSocks5Password(prefs) : "";
         ip_mode = Prefs.getIPMode(prefs);
         root_capture = Prefs.isRootCaptureEnabled(prefs);
-        dump_extensions = Prefs.isPcapdroidMetadataEnabled(prefs);
         capture_interface = Prefs.getCaptureInterface(prefs);
         tls_decryption = Prefs.getTlsDecryptionEnabled(prefs);
         full_payload = Prefs.getFullPayloadMode(prefs);
@@ -82,6 +81,7 @@ public class CaptureSettings implements Serializable {
         auto_block_private_dns = Prefs.isPrivateDnsBlockingEnabled(prefs);
         mitmproxy_opts = Prefs.getMitmproxyOpts(prefs);
         pcapng_format = Prefs.isPcapngEnabled(ctx, prefs);
+        dump_extensions = pcapng_format || Prefs.isPcapdroidMetadataEnabled(prefs);
         api_capture = false;
     }
 
@@ -100,8 +100,6 @@ public class CaptureSettings implements Serializable {
         socks5_password = getString(intent, Prefs.PREF_SOCKS5_PASSWORD_KEY, "");
         ip_mode = Prefs.getIPMode(getString(intent, Prefs.PREF_IP_MODE, Prefs.IP_MODE_DEFAULT));
         root_capture = getBool(intent, Prefs.PREF_ROOT_CAPTURE, false);
-        dump_extensions = getBool(intent, Prefs.PREF_DUMP_EXTENSIONS, false) ||
-                getBool(intent, "pcapdroid_trailer", false) /* deprecated */;
         capture_interface = getString(intent, Prefs.PREF_CAPTURE_INTERFACE, "@inet");
         pcap_uri = getString(intent, "pcap_uri", "");
         pcap_name = getString(intent, "pcap_name", "");
@@ -114,6 +112,8 @@ public class CaptureSettings implements Serializable {
         auto_block_private_dns = getBool(intent, Prefs.PREF_AUTO_BLOCK_PRIVATE_DNS, true);
         mitmproxy_opts = getString(intent, Prefs.PREF_MITMPROXY_OPTS, "");
         pcapng_format = getBool(intent, Prefs.PREF_PCAPNG_ENABLED, false);
+        dump_extensions = getBool(intent, Prefs.PREF_DUMP_EXTENSIONS, false)
+                || getBool(intent, "pcapdroid_trailer", false) /* deprecated */;
         sslkeylog_name = getString(intent, "sslkeylog_name", "");
         decryption_rules_json = getDecryptionRulesFromIntent(intent);
         api_capture = true;

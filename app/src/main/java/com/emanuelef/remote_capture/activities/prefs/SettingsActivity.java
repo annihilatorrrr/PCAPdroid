@@ -196,6 +196,7 @@ public class SettingsActivity extends BaseActivity implements PreferenceFragment
         private Preference mMitmWizard;
         private SwitchPreference mMalwareDetectionEnabled;
         private SwitchPreference mPcapngEnabled;
+        private SwitchPreference mDumpExtensions;
         private SwitchPreference mRestartOnDisconnect;
         private Billing mIab;
         private boolean mHasStartedMitmWizard;
@@ -281,6 +282,11 @@ public class SettingsActivity extends BaseActivity implements PreferenceFragment
 
         private boolean isPcapngEnabled() {
             return mIab.isPurchased(Billing.PCAPNG_SKU) && mPcapngEnabled.isChecked();
+        }
+
+        private void dumpExtensionsHideShow(boolean pcapngEnabled) {
+            // the PCAPdroid extensions are implicitly enabled with the pcapng format
+            mDumpExtensions.setVisible(!pcapngEnabled);
         }
 
         private void refreshInterfaces() {
@@ -379,7 +385,8 @@ public class SettingsActivity extends BaseActivity implements PreferenceFragment
                     return true;
                 });
 
-            mPcapngEnabled = requirePreference("pcapng_format");
+            mPcapngEnabled = requirePreference(Prefs.PREF_PCAPNG_ENABLED);
+            mDumpExtensions = requirePreference(Prefs.PREF_DUMP_EXTENSIONS);
 
             if(mIab.isAvailable(Billing.PCAPNG_SKU)) {
                 mPcapngEnabled.setOnPreferenceClickListener((preference -> {
@@ -391,6 +398,13 @@ public class SettingsActivity extends BaseActivity implements PreferenceFragment
                     mPcapngEnabled.setChecked(false);
             } else
                 mPcapngEnabled.setVisible(false);
+
+            mPcapngEnabled.setOnPreferenceChangeListener((preference, newValue) -> {
+                dumpExtensionsHideShow((boolean) newValue);
+                return true;
+            });
+
+            dumpExtensionsHideShow(isPcapngEnabled());
 
             mFullPayloadEnabled = requirePreference(Prefs.PREF_FULL_PAYLOAD);
             mBlockQuic = requirePreference(Prefs.PREF_BLOCK_QUIC);
