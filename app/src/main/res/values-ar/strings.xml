@@ -269,7 +269,7 @@
     <string name="capture_interface_open_error">لا يمكن فتح واجهة الالتقاط</string>
     <string name="unsupported_pcap_datalink">يحتوي الملف على datalink غير مدعوم</string>
     <string name="pcap_file_not_exists">الملف المحدد غير موجود</string>
-    <string name="pcap_file_load_aborted">تم إحباط تحميل الالتقاط</string>
+    <string name="pcap_file_load_aborted">تم إحباط التقاط تحميل</string>
     <string name="host_resolution_failed">تعذر حل المضيف %1$s</string>
     <string name="pcapdroid_trailer_notice">لإظهار التطبيقات الفعلية بدلاً من \"%1$s\"، تأكد من تمكين الخيار \"%2$s\" قبل توليد التفريغ</string>
     <string name="decryption_info_no_rule">لفك تعمية هذا الاتصال، أنشئ قاعدة فك التعمية من الدرج الأيسر أو من القائمة السياقية في قائمة الاتصالات</string>
@@ -316,7 +316,7 @@
     <string name="downloading">جارى التحميل…</string>
     <string name="download_in_progress">التنزيل قيد التقدم، يُرجى الأنتظار</string>
     <string name="download_failed">فشل التحميل</string>
-    <string name="pcap_load_in_progress">تحميل الالتقاط قيد التقدم، يُرجى الانتظار</string>
+    <string name="pcap_load_in_progress">التقاط التحميل قيد التقدم، يُرجى الانتظار</string>
     <string name="geo_db_not_found">لم يتم العثور على قاعدة البيانات. تم تعطيل تحديد الموقع الجغرافي</string>
     <string name="database">قاعدة البيانات</string>
     <string name="built_on">مبني على: %1$s</string>
@@ -444,7 +444,7 @@
     <string name="pcapng_format">تنسيق Pcapng</string>
     <string name="pcapng_format_summary">تفريغ الحزم بتنسيق تفريغ Pcapng، وهو أكثر مرونة ويسمح بتضمين أسرار فك تعمية TLS</string>
     <string name="tls_decryption_no_rules_notice">يتم تطبيق فك تعمية TLS فقط على الاتصالات التي تطابق القواعد التي تم تكوينها. هل تريد إنشاء قواعد فك التعمية الآن؟</string>
-    <string name="active_vpn_detected">اكتُشفت شبكة VPN نشطة</string>
+    <string name="active_vpn_detected">اكتُشف شبكة VPN نشطة</string>
     <string name="proto_and_port">%1$s ،%2$d</string>
     <string name="n_pkts">%1$s حِزم</string>
     <string name="traffic_inspection">تَفَقُّد حركة المرور</string>
@@ -579,6 +579,6 @@
     <string name="port_mapping_disabled_reminder">فعّل تعيين المنافذ لاستخدام هذه القاعدة</string>
     <string name="tls_decryption_unsupported_target">يتطلب فك تعمية TLS نظام أندرويد 7 أو أحدث وجهازًا يعمل بنظام x86_64/aarch64</string>
     <string name="save_as_csv">احفظ كملف CSV</string>
-    <string name="connections_log_size">أقصى عدد للاتصالات المسجلة</string>
+    <string name="connections_log_size">أقصى عدّد للاتصالات المسجلة</string>
     <string name="connections_log_size_entry">%1$s (استُخدم حوالي %2$d م.بايت من ذاكرة الوصول العشوائي)</string>
 </resources>
