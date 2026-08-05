@@ -1268,7 +1268,7 @@ public class Utils {
 
     // NOTE: base32 padding not supported
     public static byte[] base32Decode(String s) {
-        s = s.toUpperCase().replace("\n", "");
+        s = s.toUpperCase(Locale.ROOT).replace("\n", "");
         byte[] rv = new byte[s.length() * 5 / 8];
         int i = 0;
         int bitsRemaining = 8;

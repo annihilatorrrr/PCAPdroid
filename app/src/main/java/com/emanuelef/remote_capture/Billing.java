@@ -176,7 +176,7 @@ public class Billing {
             return sig.verify(getASN1(data, 4));
         } catch (NoSuchAlgorithmException | InvalidKeySpecException | InvalidKeyException
                 | SignatureException | IllegalArgumentException e) {
-            Log.d(TAG, e.getMessage());
+            Log.d(TAG, "invalid license: " + e);
             return false;
         }
     }
