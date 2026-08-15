@@ -243,6 +243,17 @@ public class SettingsActivity extends BaseActivity implements PreferenceFragment
         }
 
         @Override
+        public boolean onPreferenceTreeClick(@NonNull Preference preference) {
+            Intent intent = preference.getIntent();
+            if(intent != null) {
+                Utils.startActivity(requireContext(), intent);
+                return true;
+            }
+
+            return super.onPreferenceTreeClick(preference);
+        }
+
+        @Override
         public void onResume() {
             super.onResume();
 
