@@ -30,10 +30,20 @@ android {
         }
     }
 
+    signingConfigs {
+        release {
+            // NOTE: v1 is still needed, as v2 is only supported since API 24
+            enableV1Signing true
+            enableV2Signing true
+            enableV3Signing true
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
         debug {
             // Use a different app ID for debug to allow its coexistence with release builds
