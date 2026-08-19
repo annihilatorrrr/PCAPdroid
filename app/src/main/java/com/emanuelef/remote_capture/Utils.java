@@ -1360,6 +1360,7 @@ public class Utils {
             sha1.update(signatures[0].toByteArray());
 
             // keytool -printcert -jarfile file.apk
+            // see also tools/verify_apk_signature.sh
             String hex = byteArrayToHex(sha1.digest(), sha1.getDigestLength());
             switch(hex) {
                 case "511140392BFF2CFB4BD825895DD6510CE1807F6D":
