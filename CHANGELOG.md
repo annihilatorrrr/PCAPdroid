@@ -2,6 +2,25 @@
 
 Releases available at https://github.com/emanuele-f/PCAPdroid/releases
 
+## [2.0.0] - 2026-08-19
+- PCAPdroid now requires Android 23+
+- The mitm addon now requires Android 24+ and it drops support for the x86 and armeabi-v7a ABIs
+- Add Capture List: show past captures and their size on disk (#281)
+- Implement app isolation (#536)
+- Add settings export and import (#379)
+- Android 17 support: the "Nearby devices" permission is now required
+- Add port mapping exemptions (#861)
+- Make connections log size configurable (#849)
+- Allow to specify the UDP/TCP collector as a domain name (#807)
+- Bump mitm addon to v2.3 (mitmproxy 12.2.3, full 16 KB devices support, fix IPv6 decryption and AttributeError)
+- Bump ushark decryption module (wireshark v4.7.1)
+- Simplify open/decrypt PCAP/Pcapng
+- New translations: BN, FR, HI, JA, KO, MS, UR, VI
+- Fix auto-update from the Github build to the Google Play build
+- Fix binary body corruption in HAR export (#876)
+- Fix RTL layout issues (#880)
+- Minor bug fixes
+
 ## [1.9.1] - 2026-02-22
 - Fix minor crashes
 - Switch to facebook/zstd and build from the source

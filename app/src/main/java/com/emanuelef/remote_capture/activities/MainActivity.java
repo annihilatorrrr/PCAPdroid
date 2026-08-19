@@ -170,7 +170,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
             finish();
             return;
         } else {
-            if (appver < 90)
+            if (appver < 92)
                 showWhatsNew();
 
             Prefs.refreshAppVersion(mPrefs);
@@ -357,12 +357,13 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         new AlertDialog.Builder(this)
                 .setTitle(R.string.whats_new)
                 .setMessage(
-                        "- New HTTP requests view\n" +
-                        "- Export HTTP data in the HAR format\n" +
-                        "- Add Portuguese (BR) translation\n" +
-                        "- Support the zstd compression\n" +
-                        "- Pretty-print JSON in HTTP data\n" +
-                        "- Fix HTTP/2 and WebSocket handling\n"
+                        "- New Capture List view\n" +
+                        "- Implement app isolation (Firewall)\n" +
+                        "- Add ability to import/export settings\n" +
+                        "- Android 17 support\n" +
+                        "- Mitm addon v2.3 (mitmproxy 12.2.3)\n" +
+                        "- Translations: BN, FR, HI, JA, KO, MS, UR, VI\n" +
+                        "- Bug fixes and dependency updates\n"
                 )
                 .setNeutralButton(R.string.ok, (dialogInterface, i) -> {})
                 .show();
