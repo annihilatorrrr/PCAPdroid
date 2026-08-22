@@ -150,6 +150,7 @@ public class ConnectionsFragment extends Fragment implements ConnectionsListener
         super.onPause();
 
         unregisterConnsListener();
+        mHandler.removeCallbacksAndMessages(null);
         mRecyclerView.setEmptyView(null);
 
         if(mSearchView != null)
